@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 100% 98%;
+    --foreground: 30 10% 12%;
+    --border: 38 35% 86%;
+    --input: 38 35% 86%;
+    --ring: 12 34% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden bg-cream-50 text-ink-900 antialiased;
+    background:
+      radial-gradient(circle at 16% 0%, rgba(247, 183, 198, 0.26), transparent 34rem),
+      radial-gradient(circle at 88% 10%, rgba(191, 234, 241, 0.24), transparent 32rem),
+      #fffdf8;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #f7d4dd;
+    color: #221f1c;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-[1180px] px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase text-rose-400;
+    letter-spacing: 0;
+  }
+
+  .glass {
+    @apply border border-white/75 bg-white/70 shadow-soft-line backdrop-blur-2xl;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 18px 60px rgba(194, 152, 130, 0.12);
+  }
+
+  .hero-frame {
+    background:
+      radial-gradient(circle at 18% 64%, rgba(247, 183, 198, 0.42), transparent 15rem),
+      radial-gradient(circle at 86% 72%, rgba(191, 234, 241, 0.42), transparent 17rem),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 248, 244, 0.86));
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 24px 80px rgba(154, 116, 86, 0.16);
+  }
+
+  .watercolor-blob {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 999px;
+    filter: blur(24px);
+    opacity: 0.68;
+    mix-blend-mode: multiply;
+    animation: watercolor-drift 13s ease-in-out infinite alternate;
+  }
+
+  .watercolor-blob-soft {
+    filter: blur(38px);
+    opacity: 0.38;
+  }
+
+  .logo-float {
+    animation: logo-float 4.8s ease-in-out infinite;
+    filter: drop-shadow(0 14px 26px rgba(244, 143, 164, 0.22));
+  }
+
+  .pastel-glow {
+    box-shadow:
+      0 0 0 1px rgba(220, 199, 153, 0.35),
+      0 18px 60px rgba(244, 143, 164, 0.2),
+      0 18px 60px rgba(191, 234, 241, 0.18);
+  }
+
+  .image-reveal {
+    mask-image: linear-gradient(130deg, transparent 0%, black 18%, black 100%);
+    -webkit-mask-image: linear-gradient(130deg, transparent 0%, black 18%, black 100%);
+  }
+
+  .gold-stroke path {
+    filter: drop-shadow(0 2px 5px rgba(198, 169, 104, 0.18));
+  }
+
+  .section-watercolor {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-watercolor::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 8% 18%, rgba(247, 183, 198, 0.18), transparent 18rem),
+      radial-gradient(circle at 92% 82%, rgba(191, 234, 241, 0.18), transparent 20rem);
+  }
+
+  .pastel-link {
+    position: relative;
+  }
+
+  .pastel-link::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, #f48fa4, #bfeaf1, #dcc799);
+    transition: transform 280ms ease;
+  }
+
+  .pastel-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .image-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.28) 45%,
+      transparent 70%
+    );
+    opacity: 0;
+    transform: translateX(-60%);
+    transition:
+      opacity 420ms ease,
+      transform 760ms ease;
+  }
+
+  .image-sheen:hover::after {
+    opacity: 1;
+    transform: translateX(60%);
+  }
+
+  @keyframes watercolor-drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(18px, -16px, 0) scale(1.08) rotate(5deg);
+    }
+  }
+
+  @keyframes logo-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(0, -9px, 0) scale(1.018);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .watercolor-blob,
+    .logo-float {
+      animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
