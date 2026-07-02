@@ -297,12 +297,12 @@ function Hero() {
           >
             <div className="image-reveal absolute inset-0 overflow-hidden rounded-[1.75rem] bg-white/40">
               <Image
-                src="/images/placeholders/nail1.png"
-                alt="Pink shimmer almond nails by Beautyphile Nails Cork"
+                src="/images/placeholders/nail3.png"
+                alt="Pearl chrome extension nails by Beautyphile Nails Cork"
                 fill
                 quality={82}
                 sizes="(min-width: 1024px) 52vw, 92vw"
-                className="object-cover object-[55%_50%]"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-white/0 via-white/10 to-cream-50/70" />
             </div>
@@ -399,7 +399,7 @@ function Services() {
                       alt={`${service.title} at Beautyphile Nails Cork`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition duration-700 group-hover:scale-105"
+                      className="object-cover object-center transition duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-5">
@@ -515,7 +515,7 @@ function Gallery() {
                 onClick={() => setActiveIndex(index)}
                 className={cn(
                   "group relative mb-4 w-full break-inside-avoid overflow-hidden rounded-2xl bg-white text-left shadow-soft-line transition duration-300 hover:shadow-[0_22px_70px_rgba(191,234,241,0.22)]",
-                  item.tall ? "h-[520px]" : "h-[360px]",
+                  item.tall ? "h-[560px]" : "h-[430px]",
                 )}
                 aria-label={`Open ${item.title}`}
               >
@@ -524,7 +524,7 @@ function Gallery() {
                   alt={item.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/40 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
                 <div className="absolute bottom-0 left-0 right-0 translate-y-3 p-5 text-cream-50 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -716,7 +716,7 @@ function InstagramStrip() {
                   alt={post.title}
                   fill
                   sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition duration-700 group-hover:scale-105"
                 />
                   <div className="absolute inset-0 flex items-center justify-center bg-ink-900/0 text-white opacity-0 transition group-hover:bg-ink-900/20 group-hover:opacity-100">
                   <Instagram className="size-6" />
@@ -744,13 +744,13 @@ function SalonTeam() {
           {salonImages.map((item, index) => (
             <MotionBlock key={item.title} delay={index * 0.08}>
               <article className="group overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.16)]">
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden bg-cream-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(min-width: 1024px) 33vw, 100vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-cover object-center transition duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
@@ -817,13 +817,13 @@ function VisitBooking() {
 
           <MotionBlock delay={0.1} className="h-full">
             <div className="flex h-full flex-col justify-between rounded-2xl border border-gold-100 bg-cream-50 p-6 shadow-soft-line sm:p-8">
-              <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-xl border border-gold-100 bg-white">
+              <div className="relative mb-6 aspect-square overflow-hidden rounded-xl border border-gold-100 bg-white">
                 <Image
                   src="/images/placeholders/mặt trước tiệm.jpg"
                   alt="Beautyphile Nails Cork storefront on Oliver Plunkett Street"
                   fill
                   sizes="(min-width: 1024px) 32vw, 100vw"
-                  className="object-cover object-[50%_48%]"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="flex items-start gap-4">

@@ -185,9 +185,9 @@ export const galleryItems: {
     tall: true,
   },
   {
-    title: "Pearl chrome extension detail",
-    filter: "Nail Art",
-    image: "/images/placeholders/nail3.png",
+    title: "Pink shimmer almond set",
+    filter: "BIAB",
+    image: "/images/placeholders/nail1.png",
   },
   {
     title: "Soft ombre BIAB with jewellery",
