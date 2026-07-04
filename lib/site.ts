@@ -34,18 +34,63 @@ export const business = {
 };
 
 export const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Aftercare", href: "#aftercare" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Visit", href: "#visit" },
+  { label: "Services", href: "/services" },
+  { label: "Aftercare", href: "/aftercare" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Visit", href: "/visit" },
 ];
 
 export const openingHours = [
   { day: "Monday - Wednesday", hours: "10:00 AM - 7:00 PM" },
   { day: "Thursday - Friday", hours: "10:00 AM - 8:00 PM" },
   { day: "Saturday", hours: "10:00 AM - 7:00 PM" },
-  { day: "Sunday", hours: "10:00 AM - 6:00 PM" },
+  { day: "Sunday", hours: "11:00 AM - 7:00 PM" },
+];
+
+export const explorePages = [
+  {
+    label: "Services",
+    title: "Our nail services",
+    description: "BIAB, Shellac, gel, French, acrylic, extensions, nail art and more.",
+    href: "/services",
+    image: "/images/placeholders/service-biab.jpg",
+  },
+  {
+    label: "Gallery",
+    title: "Recent work",
+    description: "Soft manicure inspiration and finished sets from the boutique.",
+    href: "/gallery",
+    image: "/images/placeholders/nail2.png",
+  },
+  {
+    label: "Aftercare",
+    title: "Nail aftercare",
+    description: "Simple daily habits to keep your manicure beautiful for longer.",
+    href: "/aftercare",
+    image: "/images/placeholders/salon-products.jpg",
+  },
+  {
+    label: "Reviews",
+    title: "Client reviews",
+    description: "What clients say about their Beautyphile appointments.",
+    href: "/reviews",
+    image: "/images/placeholders/gallery-french-soft.jpg",
+  },
+  {
+    label: "Visit",
+    title: "Find the salon",
+    description: "Opening hours, map and directions to 9 Oliver Plunkett Street.",
+    href: "/visit",
+    image: "/images/placeholders/mặt trước tiệm.jpg",
+  },
+  {
+    label: "Salon",
+    title: "Inside the boutique",
+    description: "Bright stations and a calm city-centre experience.",
+    href: "/gallery#salon",
+    image: "/images/placeholders/bentrongquan1.png",
+  },
 ];
 
 export const proofPoints = [
@@ -334,8 +379,8 @@ export const structuredData = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: "Sunday",
-      opens: "10:00",
-      closes: "18:00",
+      opens: "11:00",
+      closes: "19:00",
     },
   ],
   priceRange: "€€",

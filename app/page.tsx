@@ -1,4 +1,4 @@
-import { HomePage } from "@/components/homepage";
+import { AboutProof, ExplorePages, Hero } from "@/components/sections";
 import { structuredData } from "@/lib/site";
 
 export default function Page() {
@@ -8,7 +8,9 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <HomePage />
+      <Hero />
+      <AboutProof />
+      <ExplorePages />
     </>
   );
 }

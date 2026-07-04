@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 
+import { SiteChrome } from "@/components/site-chrome";
+
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -83,7 +85,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <SiteChrome>{children}</SiteChrome>
+      </body>
     </html>
   );
 }

@@ -2,16 +2,13 @@
 
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import {
-  ArrowUp,
+  ArrowUpRight,
   CalendarHeart,
   ChevronLeft,
   ChevronRight,
   Clock3,
-  ExternalLink,
   Instagram,
-  Mail,
   MapPin,
-  Menu,
   MessageCircle,
   Phone,
   ShieldCheck,
@@ -20,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -27,10 +25,10 @@ import { Button } from "@/components/ui/button";
 import {
   aftercareTips,
   business,
+  explorePages,
   faqs,
   galleryItems,
   instagramPosts,
-  navItems,
   openingHours,
   proofPoints,
   reviews,
@@ -96,139 +94,16 @@ function SectionHeading({
   );
 }
 
-export function HomePage() {
-  return (
-    <main className="relative overflow-hidden">
-      <Navbar />
-      <Hero />
-      <AboutProof />
-      <Services />
-      <Aftercare />
-      <Gallery />
-      <Reviews />
-      <InstagramStrip />
-      <SalonTeam />
-      <FAQ />
-      <VisitBooking />
-      <SiteFooter />
-      <FloatingActions />
-      <MobileBookingBar />
-      <BackToTop />
-    </main>
-  );
+export function PageShell({ children }: { children: React.ReactNode }) {
+  return <div className="pt-20 sm:pt-24">{children}</div>;
 }
 
-function Navbar() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-4 sm:px-5">
-      <nav className="glass mx-auto flex h-16 max-w-[1120px] items-center justify-between rounded-[1.7rem] px-3 sm:h-[4.5rem] sm:px-5">
-        <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="Beautyphile Nails Cork home">
-          <Image
-            src="/images/logo-transparent.png"
-            alt="Beautyphile Nails Cork logo"
-            width={52}
-            height={52}
-            priority
-            className="logo-float size-12 rounded-full object-contain"
-          />
-          <span className="hidden font-serif text-2xl font-semibold text-ink-900 sm:block">
-            Beautyphile
-          </span>
-        </a>
-
-        <div className="hidden items-center gap-1 md:flex">
-          <a
-            href="#top"
-            className="pastel-link rounded-full px-4 py-2 text-xs font-bold uppercase text-rose-400 transition"
-          >
-            Home
-          </a>
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="pastel-link rounded-full px-4 py-2 text-xs font-bold uppercase text-ink-700 transition hover:text-rose-400"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <Button asChild variant="secondary" size="sm">
-            <a href={business.phoneHref}>
-              <Phone className="size-4" />
-              Call
-            </a>
-          </Button>
-          <Button asChild size="sm">
-            <a href={business.whatsappHref} target="_blank" rel="noreferrer">
-              <CalendarHeart className="size-4" />
-              Book
-            </a>
-          </Button>
-        </div>
-
-        <button
-          type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full border border-gold-100 bg-white/80 text-ink-900 md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
-      </nav>
-
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.22 }}
-            className="glass mx-auto mt-2 max-w-[calc(100vw-1.5rem)] rounded-2xl p-4 md:hidden"
-          >
-            <div className="grid gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-xl px-4 py-3 text-base font-semibold text-ink-800"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <Button asChild variant="secondary">
-                <a href={business.phoneHref}>
-                  <Phone className="size-4" />
-                  Call
-                </a>
-              </Button>
-              <Button asChild>
-                <a href={business.whatsappHref} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4" />
-                  Book
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </header>
-  );
-}
-
-function Hero() {
+export function Hero() {
   const { scrollY } = useScroll();
   const imageY = useTransform(scrollY, [0, 700], [0, 46]);
 
   return (
-    <section id="top" className="relative min-h-[100svh] overflow-hidden px-3 pb-12 pt-24 sm:px-6 sm:pt-28">
+    <section className="relative min-h-[100svh] overflow-hidden px-3 pb-12 pt-24 sm:px-6 sm:pt-28">
       <div className="watercolor-blob left-[-7rem] top-8 h-80 w-80 bg-blush-200/70" />
       <div className="watercolor-blob watercolor-blob-soft right-[-8rem] top-16 h-96 w-96 bg-mint-200/80 [animation-delay:1.2s]" />
       <div className="watercolor-blob bottom-8 left-[42%] h-56 w-56 bg-gold-100/60 [animation-delay:2.4s]" />
@@ -280,10 +155,15 @@ function Hero() {
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-ink-700">
-              <span className="inline-flex items-center gap-2">
+              <a
+                href={business.maps}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 transition hover:text-rose-400"
+              >
                 <MapPin className="size-4 text-rose-400" />
                 9 Oliver Plunkett Street
-              </span>
+              </a>
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck className="size-4 text-rose-400" />
                 Hygiene-led nail care
@@ -327,7 +207,7 @@ function Hero() {
   );
 }
 
-function AboutProof() {
+export function AboutProof() {
   return (
     <section className="section-watercolor bg-cream-50 py-20 sm:py-28">
       <div className="section-shell relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -366,7 +246,53 @@ function AboutProof() {
   );
 }
 
-function Services() {
+export function ExplorePages() {
+  return (
+    <section className="section-watercolor bg-white py-20 sm:py-28">
+      <div className="section-shell relative z-10">
+        <SectionHeading
+          eyebrow="Explore"
+          title="Everything, one tap away."
+          text="Services, gallery, aftercare, reviews and directions each have their own page — pick where you want to go."
+          align="center"
+        />
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {explorePages.map((page, index) => (
+            <MotionBlock key={page.href} delay={index * 0.05}>
+              <Link
+                href={page.href}
+                className="group block h-full overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.18)]"
+              >
+                <div className="image-sheen relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={page.image}
+                    alt={page.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-center transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex items-start justify-between gap-4 p-5">
+                  <div>
+                    <p className="eyebrow">{page.label}</p>
+                    <h3 className="mt-2 font-serif text-2xl font-semibold text-ink-900">{page.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-ink-700">{page.description}</p>
+                  </div>
+                  <div className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-rose-400 shadow-soft-line transition group-hover:bg-rose-400 group-hover:text-white">
+                    <ArrowUpRight className="size-4" />
+                  </div>
+                </div>
+              </Link>
+            </MotionBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Services() {
   return (
     <section id="services" className="section-watercolor bg-white py-20 sm:py-28">
       <div className="section-shell relative z-10">
@@ -420,7 +346,7 @@ function Services() {
   );
 }
 
-function Aftercare() {
+export function Aftercare() {
   return (
     <section id="aftercare" className="section-watercolor bg-blush-50 py-20 sm:py-28">
       <div className="section-shell relative z-10">
@@ -467,7 +393,7 @@ function Aftercare() {
   );
 }
 
-function Gallery() {
+export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const activeItem = activeIndex === null ? null : galleryItems[activeIndex];
 
@@ -599,7 +525,7 @@ function Gallery() {
   );
 }
 
-function Reviews() {
+export function Reviews() {
   const [index, setIndex] = useState(0);
   const review = reviews[index];
 
@@ -681,7 +607,7 @@ function Reviews() {
   );
 }
 
-function InstagramStrip() {
+export function InstagramStrip() {
   return (
     <section className="section-watercolor bg-cream-50 py-20 sm:py-28">
       <div className="section-shell relative z-10">
@@ -730,9 +656,9 @@ function InstagramStrip() {
   );
 }
 
-function SalonTeam() {
+export function SalonTeam() {
   return (
-    <section className="section-watercolor bg-white py-20 sm:py-28">
+    <section id="salon" className="section-watercolor bg-white py-20 sm:py-28">
       <div className="section-shell relative z-10">
         <SectionHeading
           eyebrow="Salon"
@@ -766,7 +692,7 @@ function SalonTeam() {
   );
 }
 
-function FAQ() {
+export function FAQ() {
   return (
     <section className="section-watercolor bg-cream-50 py-20 sm:py-28">
       <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
@@ -790,7 +716,7 @@ function FAQ() {
   );
 }
 
-function VisitBooking() {
+export function VisitBooking() {
   return (
     <section id="visit" className="section-watercolor bg-white py-20 sm:py-28">
       <div className="section-shell relative z-10">
@@ -834,13 +760,25 @@ function VisitBooking() {
                   <h3 className="font-serif text-3xl font-semibold leading-tight text-ink-900">
                     Beautyphile Nails Cork
                   </h3>
-                  <address className="mt-4 not-italic leading-7 text-ink-700">
-                    {business.addressLines.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
-                  </address>
+                  <a
+                    href={business.maps}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group mt-4 block"
+                    aria-label="Open Beautyphile Nails Cork on Google Maps"
+                  >
+                    <address className="not-italic leading-7 text-ink-700 transition group-hover:text-rose-400">
+                      {business.addressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
+                    <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-rose-400">
+                      Open in Google Maps
+                      <ArrowUpRight className="size-4" />
+                    </span>
+                  </a>
                 </div>
               </div>
 
@@ -891,126 +829,5 @@ function VisitBooking() {
         </MotionBlock>
       </div>
     </section>
-  );
-}
-
-function FloatingActions() {
-  return (
-    <div className="fixed bottom-6 right-5 z-40 hidden flex-col gap-2 md:flex">
-      <Button asChild variant="icon" size="icon">
-        <a href={business.whatsappHref} target="_blank" rel="noreferrer" aria-label="Book on WhatsApp">
-          <MessageCircle className="size-5" />
-        </a>
-      </Button>
-      <Button asChild variant="icon" size="icon">
-        <a href={business.phoneHref} aria-label="Call Beautyphile Nails Cork">
-          <Phone className="size-5" />
-        </a>
-      </Button>
-      <Button asChild variant="icon" size="icon">
-        <a href={business.instagram} target="_blank" rel="noreferrer" aria-label="Open Instagram">
-          <Instagram className="size-5" />
-        </a>
-      </Button>
-    </div>
-  );
-}
-
-function MobileBookingBar() {
-  return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gold-100 bg-cream-50/90 px-4 py-3 shadow-soft-line backdrop-blur-2xl md:hidden">
-      <div className="grid grid-cols-[1fr_1fr] gap-2">
-        <Button asChild variant="secondary">
-          <a href={business.phoneHref}>
-            <Phone className="size-4" />
-            Call
-          </a>
-        </Button>
-        <Button asChild>
-          <a href={business.whatsappHref} target="_blank" rel="noreferrer">
-            <CalendarHeart className="size-4" />
-            Book
-          </a>
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-function BackToTop() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    function onScroll() {
-      setVisible(window.scrollY > 900);
-    }
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {visible ? (
-        <motion.a
-          href="#top"
-          aria-label="Back to top"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 12 }}
-          className="fixed bottom-6 left-5 z-40 hidden size-11 items-center justify-center rounded-full border border-gold-100 bg-white/90 text-ink-900 shadow-soft-line backdrop-blur md:flex"
-        >
-          <ArrowUp className="size-5" />
-        </motion.a>
-      ) : null}
-    </AnimatePresence>
-  );
-}
-
-function SiteFooter() {
-  return (
-    <footer className="bg-cream-50 pb-28 pt-12 md:pb-10">
-      <div className="section-shell flex flex-col gap-8 border-t border-gold-100 pt-8 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-4">
-          <Image
-            src="/images/logo-transparent.png"
-            alt="Beautyphile Nails Cork"
-            width={62}
-            height={62}
-            className="size-14 rounded-full object-contain"
-          />
-          <div>
-            <p className="font-serif text-2xl font-semibold text-ink-900">Beautyphile Nails Cork</p>
-            <p className="mt-1 text-sm text-ink-700">9 Oliver Plunkett Street, Cork</p>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          <Button asChild variant="icon" size="icon">
-            <a href={business.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-              <Instagram className="size-5" />
-            </a>
-          </Button>
-          <Button asChild variant="icon" size="icon">
-            <a href={business.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
-              <ExternalLink className="size-5" />
-            </a>
-          </Button>
-          <Button asChild variant="icon" size="icon">
-            <a href={business.emailHref} aria-label="Email Beautyphile Nails Cork">
-              <Mail className="size-5" />
-            </a>
-          </Button>
-          <Button asChild variant="icon" size="icon">
-            <a href={business.maps} target="_blank" rel="noreferrer" aria-label="Open Google Maps">
-              <MapPin className="size-5" />
-            </a>
-          </Button>
-        </div>
-
-        <p className="text-sm text-ink-700">Copyright © 2026 Hoangcaster</p>
-      </div>
-    </footer>
   );
 }
