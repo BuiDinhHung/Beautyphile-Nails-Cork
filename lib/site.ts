@@ -54,14 +54,14 @@ export const explorePages = [
     title: "Our nail services",
     description: "BIAB, Shellac, gel, French, acrylic, extensions, nail art and more.",
     href: "/services",
-    image: "/images/placeholders/service-biab.jpg",
+    image: "/images/placeholders/service-manicure.jpg",
   },
   {
     label: "Gallery",
     title: "Recent work",
     description: "Soft manicure inspiration and finished sets from the boutique.",
     href: "/gallery",
-    image: "/images/placeholders/nail2.png",
+    image: "/images/placeholders/beautyphile-ocean-art-wide.png",
   },
   {
     label: "Aftercare",
@@ -116,7 +116,7 @@ export const serviceCategories = [
     title: "BIAB",
     eyebrow: "Strength and shape",
     description: "Builder gel overlays for stronger natural nails with a refined glossy finish.",
-    image: "/images/placeholders/service-biab.jpg",
+    image: "/images/placeholders/nail1.png",
     icon: Sparkles,
   },
   {
@@ -224,9 +224,9 @@ export const galleryItems: {
   tall?: boolean;
 }[] = [
   {
-    title: "Gold chrome sculpted tips",
+    title: "Ocean art almond set",
     filter: "Nail Art",
-    image: "/images/placeholders/nail2.png",
+    image: "/images/placeholders/beautyphile-ocean-art.jpg",
     tall: true,
   },
   {

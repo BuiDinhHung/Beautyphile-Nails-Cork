@@ -269,6 +269,7 @@ export function ExplorePages() {
                     src={page.image}
                     alt={page.title}
                     fill
+                    quality={90}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover object-center transition duration-700 group-hover:scale-105"
                   />
@@ -748,6 +749,7 @@ export function VisitBooking() {
                   src="/images/placeholders/mặt trước tiệm.jpg"
                   alt="Beautyphile Nails Cork storefront on Oliver Plunkett Street"
                   fill
+                  quality={90}
                   sizes="(min-width: 1024px) 32vw, 100vw"
                   className="object-cover object-center"
                 />
