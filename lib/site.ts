@@ -55,13 +55,14 @@ export const explorePages: {
   href: string;
   image: string;
   imagePosition?: string;
+  imageAspect?: string;
 }[] = [
   {
     label: "Services",
     title: "Our nail services",
     description: "BIAB, Shellac, gel, French, acrylic, extensions, nail art and more.",
     href: "/services",
-    image: "/images/placeholders/service-manicure.jpg",
+    image: "/images/placeholders/service-biab.jpg",
   },
   {
     label: "Gallery",
@@ -69,7 +70,6 @@ export const explorePages: {
     description: "Soft manicure inspiration and finished sets from the boutique.",
     href: "/gallery",
     image: "/images/placeholders/beautyphile-ocean-art.jpg",
-    imagePosition: "object-top",
   },
   {
     label: "Aftercare",
@@ -90,14 +90,14 @@ export const explorePages: {
     title: "Find the salon",
     description: "Opening hours, map and directions to 9 Oliver Plunkett Street.",
     href: "/visit",
-    image: "/images/placeholders/mặt trước tiệm.jpg",
+    image: "/images/placeholders/storefront-3x4.jpg",
   },
   {
     label: "Salon",
     title: "Inside the boutique",
     description: "Bright stations and a calm city-centre experience.",
     href: "/gallery#salon",
-    image: "/images/placeholders/bentrongquan1.png",
+    image: "/images/placeholders/bentrongquan.png",
   },
 ];
 

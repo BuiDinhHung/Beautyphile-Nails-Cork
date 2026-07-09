@@ -264,7 +264,7 @@ export function ExplorePages() {
                 href={page.href}
                 className="group block h-full overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.18)]"
               >
-                <div className="image-sheen relative aspect-square overflow-hidden">
+                <div className={`image-sheen relative overflow-hidden ${page.imageAspect ?? "aspect-[3/4]"}`}>
                   <Image
                     src={page.image}
                     alt={page.title}
