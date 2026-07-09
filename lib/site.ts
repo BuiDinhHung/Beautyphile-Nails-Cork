@@ -48,7 +48,14 @@ export const openingHours = [
   { day: "Sunday", hours: "11:00 AM - 7:00 PM" },
 ];
 
-export const explorePages = [
+export const explorePages: {
+  label: string;
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+  imagePosition?: string;
+}[] = [
   {
     label: "Services",
     title: "Our nail services",
@@ -61,7 +68,8 @@ export const explorePages = [
     title: "Recent work",
     description: "Soft manicure inspiration and finished sets from the boutique.",
     href: "/gallery",
-    image: "/images/placeholders/beautyphile-ocean-art-wide.png",
+    image: "/images/placeholders/beautyphile-ocean-art.jpg",
+    imagePosition: "object-top",
   },
   {
     label: "Aftercare",

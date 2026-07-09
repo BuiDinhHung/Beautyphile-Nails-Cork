@@ -264,14 +264,14 @@ export function ExplorePages() {
                 href={page.href}
                 className="group block h-full overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.18)]"
               >
-                <div className="image-sheen relative aspect-[16/10] overflow-hidden">
+                <div className="image-sheen relative aspect-square overflow-hidden">
                   <Image
                     src={page.image}
                     alt={page.title}
                     fill
                     quality={90}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover object-center transition duration-700 group-hover:scale-105"
+                    className={`object-cover transition duration-700 group-hover:scale-105 ${page.imagePosition ?? "object-center"}`}
                   />
                 </div>
                 <div className="flex items-start justify-between gap-4 p-5">
