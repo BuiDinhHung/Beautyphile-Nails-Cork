@@ -175,7 +175,7 @@ export function Hero() {
             style={{ y: imageY }}
             className="relative z-10 hidden min-h-[410px] md:block lg:min-h-[560px]"
           >
-            <div className="image-reveal absolute inset-0 overflow-hidden rounded-[1.75rem] bg-white/40">
+            <div className="absolute inset-0 overflow-hidden rounded-[1.75rem] bg-white">
               <Image
                 src="/images/nail3.png"
                 alt="Pearl chrome extension nails by Beautyphile Nails Cork"
@@ -184,22 +184,7 @@ export function Hero() {
                 sizes="(min-width: 1024px) 52vw, 92vw"
                 className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-white/0 via-white/10 to-cream-50/70" />
             </div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.82, y: 18 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
-              className="logo-float absolute bottom-5 right-5 hidden size-28 rounded-full border border-gold-200 bg-white/50 p-1.5 backdrop-blur sm:block lg:bottom-7 lg:right-7 lg:size-36"
-            >
-              <Image
-                src="/images/logo-transparent.png"
-                alt="Beautyphile Nails Cork logo"
-                fill
-                sizes="144px"
-                className="rounded-full object-contain"
-              />
-            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -264,7 +249,7 @@ export function ExplorePages() {
                 href={page.href}
                 className="group block h-full overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.18)]"
               >
-                <div className={`image-sheen relative overflow-hidden ${page.imageAspect ?? "aspect-[3/4]"}`}>
+                <div className={`relative overflow-hidden ${page.imageAspect ?? "aspect-[3/4]"}`}>
                   <Image
                     src={page.image}
                     alt={page.title}
@@ -459,11 +444,6 @@ export function Gallery() {
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover object-center transition duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/40 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-                <div className="absolute bottom-0 left-0 right-0 translate-y-3 p-5 text-cream-50 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <p className="text-xs font-semibold uppercase">{item.filter}</p>
-                  <p className="mt-1 font-serif text-2xl font-semibold">{item.title}</p>
-                </div>
               </motion.button>
             ))}
           </AnimatePresence>
@@ -476,7 +456,7 @@ export function Gallery() {
             role="dialog"
             aria-modal="true"
             aria-label={activeItem.title}
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-ink-900/70 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-ink-900/70 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -491,13 +471,10 @@ export function Gallery() {
               onClick={(event) => event.stopPropagation()}
             >
               <Image src={activeItem.image} alt={activeItem.title} fill sizes="90vw" className="object-contain" />
-              <div className="absolute left-4 top-4 rounded-full bg-white/85 px-4 py-2 text-sm font-semibold text-ink-900 backdrop-blur">
-                {activeItem.title}
-              </div>
               <button
                 type="button"
                 aria-label="Close gallery"
-                className="absolute right-4 top-4 flex size-11 items-center justify-center rounded-full bg-white/85 text-ink-900 backdrop-blur"
+                className="absolute right-4 top-4 flex size-11 items-center justify-center rounded-full bg-white text-ink-900 shadow-soft-line"
                 onClick={() => setActiveIndex(null)}
               >
                 <X className="size-5" />
@@ -505,7 +482,7 @@ export function Gallery() {
               <button
                 type="button"
                 aria-label="Previous image"
-                className="absolute left-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-ink-900 backdrop-blur"
+                className="absolute left-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-ink-900 shadow-soft-line"
                 onClick={() =>
                   setActiveIndex((index) =>
                     index === null ? index : (index - 1 + galleryItems.length) % galleryItems.length,
@@ -517,7 +494,7 @@ export function Gallery() {
               <button
                 type="button"
                 aria-label="Next image"
-                className="absolute right-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-ink-900 backdrop-blur"
+                className="absolute right-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-ink-900 shadow-soft-line"
                 onClick={() =>
                   setActiveIndex((index) => (index === null ? index : (index + 1) % galleryItems.length))
                 }
@@ -651,9 +628,6 @@ export function InstagramStrip() {
                   sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
                   className="object-cover object-center transition duration-700 group-hover:scale-105"
                 />
-                  <div className="absolute inset-0 flex items-center justify-center bg-ink-900/0 text-white opacity-0 transition group-hover:bg-ink-900/20 group-hover:opacity-100">
-                  <Instagram className="size-6" />
-                </div>
               </a>
             </MotionBlock>
           ))}

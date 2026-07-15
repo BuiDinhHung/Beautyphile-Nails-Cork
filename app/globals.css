@@ -88,11 +88,6 @@
       0 18px 60px rgba(191, 234, 241, 0.18);
   }
 
-  .image-reveal {
-    mask-image: linear-gradient(130deg, transparent 0%, black 18%, black 100%);
-    -webkit-mask-image: linear-gradient(130deg, transparent 0%, black 18%, black 100%);
-  }
-
   .gold-stroke path {
     filter: drop-shadow(0 2px 5px rgba(198, 169, 104, 0.18));
   }
@@ -131,28 +126,6 @@
 
   .pastel-link:hover::after {
     transform: scaleX(1);
-  }
-
-  .image-sheen::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      120deg,
-      transparent 20%,
-      rgba(255, 255, 255, 0.28) 45%,
-      transparent 70%
-    );
-    opacity: 0;
-    transform: translateX(-60%);
-    transition:
-      opacity 420ms ease,
-      transform 760ms ease;
-  }
-
-  .image-sheen:hover::after {
-    opacity: 1;
-    transform: translateX(60%);
   }
 
   @keyframes watercolor-drift {
