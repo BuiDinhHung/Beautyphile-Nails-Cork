@@ -173,7 +173,7 @@ export function Hero() {
 
           <motion.div
             style={{ y: imageY }}
-            className="relative z-10 hidden min-h-[410px] md:block lg:min-h-[560px]"
+            className="relative z-10 mt-2 min-h-[420px] sm:min-h-[500px] md:mt-0 md:min-h-[410px] lg:min-h-[560px]"
           >
             <div className="absolute inset-0 overflow-hidden rounded-[1.75rem] bg-white">
               <Image
@@ -181,7 +181,7 @@ export function Hero() {
                 alt="Pearl chrome extension nails by Beautyphile Nails Cork"
                 fill
                 quality={82}
-                sizes="(min-width: 1024px) 52vw, 92vw"
+                sizes="(min-width: 1024px) 52vw, (min-width: 640px) 84vw, 92vw"
                 className="object-cover object-center"
               />
             </div>
