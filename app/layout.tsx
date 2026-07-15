@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/placeholders/nail3.png",
+        url: "/images/nail3.png",
         width: 1286,
         height: 1223,
         alt: "Pearl chrome extension nails by Beautyphile Nails Cork",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Beautyphile Nails Cork",
     description:
       "A soft, modern nail boutique for BIAB, gel, French and nail art in Cork City.",
-    images: ["/images/placeholders/nail3.png"],
+    images: ["/images/nail3.png"],
   },
   icons: {
     icon: "/images/logo-icon.png",

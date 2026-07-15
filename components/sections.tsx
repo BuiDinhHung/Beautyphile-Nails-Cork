@@ -177,7 +177,7 @@ export function Hero() {
           >
             <div className="image-reveal absolute inset-0 overflow-hidden rounded-[1.75rem] bg-white/40">
               <Image
-                src="/images/placeholders/nail3.png"
+                src="/images/nail3.png"
                 alt="Pearl chrome extension nails by Beautyphile Nails Cork"
                 fill
                 quality={82}
@@ -752,7 +752,7 @@ export function VisitBooking() {
             <div className="flex h-full flex-col justify-between rounded-2xl border border-gold-100 bg-cream-50 p-6 shadow-soft-line sm:p-8">
               <div className="relative mb-6 aspect-square overflow-hidden rounded-xl border border-gold-100 bg-white">
                 <Image
-                  src="/images/placeholders/mặt trước tiệm.jpg"
+                  src="/images/mặt trước tiệm.jpg"
                   alt="Beautyphile Nails Cork storefront on Oliver Plunkett Street"
                   fill
                   quality={90}
