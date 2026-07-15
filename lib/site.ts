@@ -62,7 +62,7 @@ export const explorePages: {
     title: "Our nail services",
     description: "BIAB, Shellac, gel, French, acrylic, extensions, nail art and more.",
     href: "/services",
-    image: "/images/placeholders/service-biab.jpg",
+    image: "/images/z8040686375984_ebb67fc759b4a484ba7ec9fcedae1111.jpg",
   },
   {
     label: "Gallery",
@@ -159,7 +159,7 @@ export const serviceCategories = [
     title: "Pedicure",
     eyebrow: "Fresh, cared-for feet",
     description: "Comfortable pedicure services for a clean finish and soft reset.",
-    image: "/images/placeholders/salon-products.jpg",
+    image: "/images/spachan.jpg",
     icon: Waves,
   },
   {
@@ -175,6 +175,59 @@ export const serviceCategories = [
     description: "Neat grooming, gentle services and approachable treatments for every client.",
     image: "/images/placeholders/service-kids.jpg",
     icon: HeartHandshake,
+  },
+];
+
+export const serviceMenu = [
+  {
+    title: "Hand & Foot Treatments",
+    services: [
+      { name: "File & Polish", price: "€18" },
+      { name: "Shellac", price: "€28" },
+      { name: "Mini Manicure (Regular Polish)", price: "€28" },
+      { name: "Mini Manicure (Shellac)", price: "€38" },
+      { name: "Spa Pedicure (Regular Polish)", price: "€50" },
+      { name: "Spa Pedicure (Shellac)", price: "€55" },
+    ],
+  },
+  {
+    title: "Nail Enhancements",
+    services: [
+      { name: "Acrylic/Gel Full Set (Plain Colour)", price: "€55" },
+      { name: "Acrylic/Gel French Tip", price: "€62" },
+      { name: "Acrylic/Gel Ombré", price: "€60" },
+      { name: "Acrylic/Gel Overlay (Plain Colour)", price: "€48" },
+      { name: "Acrylic/Gel Refill (Plain Colour)", price: "€48" },
+      { name: "Acrylic/Gel Refill French / Ombré", price: "€55" },
+      { name: "BIAB Base Colour", price: "€42" },
+      { name: "BIAB with Shellac (Plain Colour)", price: "€47" },
+      { name: "BIAB with Shellac French Tip", price: "€52" },
+      { name: "BIAB Extensions (Short)", price: "From €55" },
+    ],
+  },
+  {
+    title: "Add-on Services",
+    services: [
+      { name: "French Tips", price: "€5" },
+      { name: "Mixing 5 and More Colours", price: "€5" },
+      { name: "Chrome", price: "€10" },
+      { name: "Shellac Removal", price: "€10" },
+      { name: "BIAB/Gel Removal", price: "€15" },
+      { name: "Acrylic Removal", price: "€15" },
+      { name: "Extra Long Extensions", price: "€5–€15" },
+      { name: "Nail Art", price: "Ask for Quotation" },
+    ],
+  },
+  {
+    title: "Gentlemen & Kids Under 12",
+    services: [
+      { name: "Men Manicure", price: "€28" },
+      { name: "Men Pedicure", price: "€45" },
+      { name: "Kid File & Polish", price: "€12" },
+      { name: "Kid Shellac", price: "€20" },
+      { name: "Kid Pedicure (Regular Polish)", price: "€35" },
+      { name: "Kid Pedicure (Shellac)", price: "€40" },
+    ],
   },
 ];
 

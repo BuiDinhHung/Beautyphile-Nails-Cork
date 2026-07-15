@@ -33,7 +33,7 @@ import {
   proofPoints,
   reviews,
   salonImages,
-  serviceCategories,
+  serviceMenu,
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -299,10 +299,10 @@ export function Services() {
       <div className="section-shell relative z-10">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <SectionHeading
-            eyebrow="Services"
-            title="Nail care, calmly finished."
+            eyebrow="Beautyphile Nails"
+            title="Service Menu"
             titleClassName="lg:whitespace-nowrap"
-            text="A nail-first menu for the appointments clients actually search for: BIAB, Shellac, gel, French, acrylic, extensions, nail art, pedicure, kids and men."
+            text="Explore our complete treatment menu and prices, from everyday nail care to extensions, add-ons and services for gentlemen and children."
           />
           <MotionBlock delay={0.1} className="lg:justify-self-end">
             <Button asChild variant="secondary">
@@ -314,33 +314,39 @@ export function Services() {
           </MotionBlock>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceCategories.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <MotionBlock key={service.title} delay={index * 0.04}>
-                <article className="group h-full overflow-hidden rounded-2xl border border-gold-100 bg-cream-50 shadow-soft-line transition duration-300 hover:-translate-y-1 hover:border-blush-200 hover:shadow-[0_22px_70px_rgba(244,143,164,0.18)]">
-                  <div className="image-sheen relative aspect-[4/5] overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} at Beautyphile Nails Cork`}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover object-center transition duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <div className="logo-float mb-4 inline-flex size-10 items-center justify-center rounded-full bg-white text-rose-400 shadow-soft-line">
-                      <Icon className="size-4" />
-                    </div>
-                    <p className="eyebrow">{service.eyebrow}</p>
-                    <h3 className="mt-2 font-serif text-2xl font-semibold text-ink-900">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-ink-700">{service.description}</p>
-                  </div>
-                </article>
-              </MotionBlock>
-            );
-          })}
+        <div className="mt-14 grid items-start gap-x-12 gap-y-14 lg:grid-cols-2">
+          {serviceMenu.map((category, index) => (
+            <MotionBlock key={category.title} delay={index * 0.06}>
+              <section aria-labelledby={`service-menu-${index}`}>
+                <h3
+                  id={`service-menu-${index}`}
+                  className="border-b border-gold-200 pb-4 font-serif text-2xl font-semibold uppercase tracking-[0.04em] text-ink-900 sm:text-3xl"
+                >
+                  {category.title}
+                </h3>
+                <table className="mt-2 w-full table-fixed border-collapse">
+                  <thead>
+                    <tr className="border-b border-gold-100 text-left text-xs font-semibold uppercase tracking-[0.12em] text-rose-400">
+                      <th scope="col" className="w-[70%] py-3 pr-4">Service</th>
+                      <th scope="col" className="w-[30%] py-3 text-right">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {category.services.map((service) => (
+                      <tr key={service.name} className="border-b border-gold-100/80 last:border-b-0">
+                        <td className="py-4 pr-4 text-sm leading-6 text-ink-800 sm:text-base">
+                          {service.name}
+                        </td>
+                        <td className="py-4 text-right text-sm font-semibold leading-6 text-ink-900 sm:text-base">
+                          {service.price}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </section>
+            </MotionBlock>
+          ))}
         </div>
       </div>
     </section>
