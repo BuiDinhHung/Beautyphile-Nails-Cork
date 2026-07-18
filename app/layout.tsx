@@ -22,7 +22,7 @@ const sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://beautyphile-nails-cork.ie"),
   title: {
-    default: "Beautyphile Nails Cork | Luxury Nail Salon on Oliver Plunkett Street",
+    default: "Beautyphile Nail Cork | Luxury Nail Salon, BIAB, Gel Nails & Spa Pedicure in Cork",
     template: "%s | Beautyphile Nails Cork",
   },
   description:
@@ -64,10 +64,6 @@ export const metadata: Metadata = {
     description:
       "A soft, modern nail boutique for BIAB, gel, French and nail art in Cork City.",
     images: ["/images/nail3.png"],
-  },
-  icons: {
-    icon: "/images/logo-icon.png",
-    apple: "/images/logo-icon.png",
   },
 };
 

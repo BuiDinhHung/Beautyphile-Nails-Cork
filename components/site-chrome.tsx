@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUp,
   CalendarHeart,
-  ExternalLink,
+  Facebook,
   Instagram,
   Mail,
   MapPin,
@@ -263,7 +263,7 @@ function SiteFooter() {
           </Button>
           <Button asChild variant="icon" size="icon">
             <a href={business.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
-              <ExternalLink className="size-5" />
+              <Facebook className="size-5" />
             </a>
           </Button>
           <Button asChild variant="icon" size="icon">

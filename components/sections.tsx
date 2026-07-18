@@ -7,7 +7,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock3,
+  Facebook,
   Instagram,
+  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -140,7 +142,7 @@ export function Hero() {
             <p className="mt-6 max-w-lg text-base leading-8 text-ink-700 sm:text-lg">
               Premium nail care in the heart of Cork City. Relax, unwind and let us take care of you.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg">
                 <a href={business.whatsappHref} target="_blank" rel="noreferrer">
                   <CalendarHeart className="size-5" />
@@ -153,6 +155,23 @@ export function Hero() {
                   Call Now
                 </a>
               </Button>
+              <div className="flex items-center gap-3">
+                <Button asChild variant="icon" size="icon">
+                  <a href={business.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                    <Instagram className="size-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="icon" size="icon">
+                  <a href={business.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                    <Facebook className="size-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="icon" size="icon">
+                  <a href={business.emailHref} aria-label="Email">
+                    <Mail className="size-5" />
+                  </a>
+                </Button>
+              </div>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-ink-700">
               <a
