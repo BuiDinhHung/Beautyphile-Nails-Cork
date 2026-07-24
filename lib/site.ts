@@ -178,22 +178,25 @@ export const serviceCategories = [
   },
 ];
 
-export const serviceMenu = [
+export const serviceMenu: {
+  title: string;
+  services: { name: string; price: string; duration?: string }[];
+}[] = [
   {
     title: "Hand & Foot Treatments",
     services: [
       { name: "File & Polish", price: "€18" },
       { name: "Shellac", price: "€28" },
-      { name: "Mini Manicure (Regular Polish)", price: "€33" },
-      { name: "Mini Manicure (Shellac)", price: "€38" },
-      { name: "Luxury Manicure (Regular Polish)", price: "€48" },
-      { name: "Luxury Manicure (Shellac)", price: "€53" },
-      { name: "Mini Pedicure (Regular Polish)", price: "€38" },
-      { name: "Mini Pedicure (Shellac)", price: "€43" },
-      { name: "Luxury Pedicure (Regular Polish)", price: "€52" },
-      { name: "Luxury Pedicure (Shellac)", price: "€57" },
-      { name: "Deluxe Spa Pedicure (Regular Polish)", price: "€58" },
-      { name: "Deluxe Spa Pedicure (Shellac)", price: "€63" },
+      { name: "Mini Manicure (Regular Polish)", price: "€33", duration: "30 min" },
+      { name: "Mini Manicure (Shellac)", price: "€38", duration: "35 min" },
+      { name: "Luxury Manicure (Regular Polish)", price: "€48", duration: "45 min" },
+      { name: "Luxury Manicure (Shellac)", price: "€53", duration: "50 min" },
+      { name: "Mini Pedicure (Regular Polish)", price: "€38", duration: "40 min" },
+      { name: "Mini Pedicure (Shellac)", price: "€43", duration: "45 min" },
+      { name: "Luxury Pedicure (Regular Polish)", price: "€52", duration: "50 min" },
+      { name: "Luxury Pedicure (Shellac)", price: "€57", duration: "55 min" },
+      { name: "Deluxe Spa Pedicure (Regular Polish)", price: "€58", duration: "65 min" },
+      { name: "Deluxe Spa Pedicure (Shellac)", price: "€63", duration: "70 min" },
     ],
   },
   {

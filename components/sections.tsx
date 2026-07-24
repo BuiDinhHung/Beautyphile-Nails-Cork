@@ -339,7 +339,14 @@ export function Services() {
                     {category.services.map((service) => (
                       <tr key={service.name} className="border-b border-gold-100/80 last:border-b-0">
                         <td className="py-4 pr-4 text-sm leading-6 text-ink-800 sm:text-base">
-                          {service.name}
+                          <div className="flex items-baseline justify-between gap-4">
+                            <span>{service.name}</span>
+                            {service.duration ? (
+                              <span className="shrink-0 whitespace-nowrap text-xs font-semibold tracking-[0.02em] text-rose-400 sm:text-sm">
+                                {service.duration}
+                              </span>
+                            ) : null}
+                          </div>
                         </td>
                         <td className="py-4 text-right text-sm font-semibold leading-6 text-ink-900 sm:text-base">
                           {service.price}
