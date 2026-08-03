@@ -195,8 +195,8 @@ export const serviceMenu: {
       { name: "Mini Pedicure (Shellac)", price: "€43", duration: "45 min" },
       { name: "Luxury Pedicure (Regular Polish)", price: "€52", duration: "50 min" },
       { name: "Luxury Pedicure (Shellac)", price: "€57", duration: "55 min" },
-      { name: "Deluxe Spa Pedicure (Regular Polish)", price: "€58", duration: "65 min" },
-      { name: "Deluxe Spa Pedicure (Shellac)", price: "€63", duration: "70 min" },
+      { name: "Deluxe Spa Pedicure (Regular Polish)", price: "€60", duration: "65 min" },
+      { name: "Deluxe Spa Pedicure (Shellac)", price: "€65", duration: "70 min" },
     ],
   },
   {
