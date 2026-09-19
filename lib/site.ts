@@ -24,6 +24,8 @@ export const business = {
   phone: "+353 85 217 7777",
   phoneHref: "tel:+353852177777",
   whatsappHref: "https://wa.me/353852177777",
+  booking:
+    "https://www.fresha.com/book-now/beautyphile-nails-xqdc3loc/services?lid=1471175&share=true&pId=1397143",
   email: "beautyphile.cork@gmail.com",
   emailHref: "mailto:beautyphile.cork@gmail.com",
   instagram: "https://www.instagram.com/beautyphile.cork/",

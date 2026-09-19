@@ -144,7 +144,7 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg">
-                <a href={business.whatsappHref} target="_blank" rel="noreferrer">
+                <a href={business.booking} target="_blank" rel="noreferrer">
                   <CalendarHeart className="size-5" />
                   Book Appointment
                 </a>
@@ -731,7 +731,7 @@ export function VisitBooking() {
           eyebrow="Book and visit"
           title="Visit us on Oliver Plunkett Street."
           titleClassName="lg:whitespace-nowrap"
-          text="Call or message to book, then visit Beautyphile in Cork City Centre."
+          text="Book online, call or message, then visit Beautyphile in Cork City Centre."
           align="center"
         />
 
@@ -792,6 +792,12 @@ export function VisitBooking() {
 
               <div className="mt-8 grid gap-3">
                 <Button asChild>
+                  <a href={business.booking} target="_blank" rel="noreferrer">
+                    <CalendarHeart className="size-4" />
+                    Book Online
+                  </a>
+                </Button>
+                <Button asChild variant="secondary">
                   <a href={business.whatsappHref} target="_blank" rel="noreferrer">
                     <MessageCircle className="size-4" />
                     WhatsApp to Book

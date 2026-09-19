@@ -90,7 +90,7 @@ function Navbar() {
             </a>
           </Button>
           <Button asChild size="sm">
-            <a href={business.whatsappHref} target="_blank" rel="noreferrer">
+            <a href={business.booking} target="_blank" rel="noreferrer">
               <CalendarHeart className="size-4" />
               Book
             </a>
@@ -143,7 +143,7 @@ function Navbar() {
                 </a>
               </Button>
               <Button asChild>
-                <a href={business.whatsappHref} target="_blank" rel="noreferrer">
+                <a href={business.booking} target="_blank" rel="noreferrer">
                   <MessageCircle className="size-4" />
                   Book
                 </a>
@@ -189,7 +189,7 @@ function MobileBookingBar() {
           </a>
         </Button>
         <Button asChild>
-          <a href={business.whatsappHref} target="_blank" rel="noreferrer">
+          <a href={business.booking} target="_blank" rel="noreferrer">
             <CalendarHeart className="size-4" />
             Book
           </a>
